@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  linter:
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:
