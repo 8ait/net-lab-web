@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Config" />
+      <ProjectReference Include="..\NetProblem\NetProblem.csproj" />
     </ItemGroup>
 
 </Project>
