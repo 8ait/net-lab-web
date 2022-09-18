@@ -43,6 +43,6 @@ jobs:
         shell: powershell
         run: |
           cd back
-          ..\.sonar\scanner\dotnet-sonarscanner begin /k:"8ait_minimal-api" /o:"8ait" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          ..\.sonar\scanner\dotnet-sonarscanner begin /k:"8ait_net-problem-web" /o:"8ait" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build NetProblem.sln
           ..\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
