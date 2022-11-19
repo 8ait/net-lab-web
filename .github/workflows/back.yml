@@ -24,9 +24,13 @@ jobs:
           cd back
           dotnet restore
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: |
+          cd back
+          dotnet build --configuration Release --no-restore
       - name: Test
-        run: dotnet test --no-restore --verbosity normal
+        run: |
+          cd back
+          dotnet test --no-restore --verbosity normal
   sonar:
     name: sonar
     runs-on: ubuntu-latest
