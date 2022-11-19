@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 public class StartupTests
 {
-    private static Startup GetService() => new Startup();
+    private static Startup GetService() => new();
 
     [Fact]
     public void ConfigureServices()
