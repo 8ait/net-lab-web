@@ -1,5 +1,7 @@
 ﻿namespace NetProblem;
 
+using Prometheus;
+
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
@@ -19,6 +21,7 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
+            endpoints.MapMetrics();
         });
     }
 }
