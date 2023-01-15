@@ -1,13 +1,12 @@
 name: back
 on:
   push:
-    paths:
-      - back/**
     branches:
       - main
   pull_request:
     paths:
       - back/**
+      - .github\workflows\back.yml
     types: [opened, synchronize, reopened]
 jobs:
   build:
