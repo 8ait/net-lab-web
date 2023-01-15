@@ -1,9 +1,13 @@
 name: back
 on:
   push:
+    paths:
+      - back/**
     branches:
       - main
   pull_request:
+    paths:
+      - back/**
     types: [opened, synchronize, reopened]
 jobs:
   build:
@@ -15,16 +19,13 @@ jobs:
         dotnet-version: ['7.0.x']
     steps:
       - name: Install dependencies
-        run: |
-          cd back
+        run:
           dotnet restore
       - name: Build
-        run: |
-          cd back
+        run:
           dotnet build --configuration Release --no-restore
       - name: Test
-        run: |
-          cd back
+        run:
           dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=\"NetProblem.[*].Interfaces\" /p:Threshold=80 /p:ThresholdType=branch
   # sonar:
   #   name: sonar
