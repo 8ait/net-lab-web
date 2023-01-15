@@ -14,13 +14,16 @@ jobs:
     runs-on: [self-hosted]
     steps:
       - name: Install dependencies
-        run:
+        run: |
+          cd back
           dotnet restore
       - name: Build
-        run:
+        run: |
+          cd back
           dotnet build --configuration Release --no-restore
       - name: Test
-        run:
+        run: |
+          cd back
           dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=\"NetProblem.[*].Interfaces\" /p:Threshold=80 /p:ThresholdType=branch
   # sonar:
   #   name: sonar
